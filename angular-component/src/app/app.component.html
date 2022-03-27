@@ -1,0 +1,8 @@
+<input type="text" #a> <label>a</label>
+<input type="text"#ogg> <label>Oggetto</label>
+<input type="text"#txt> <label>Testo</label>
+
+<button (click)="sendEmail(a,ogg,txt)">Invia</button>
+
+
+<app-sent-mail *ngFor= "let e of vettEmail" [email] = "e"></app-sent-mail>
