@@ -1,15 +1,17 @@
+<p>
+    Messaggio per : {{email.a}}
+</p>
 
-<p>
-    Messagio per: {{email.a}}
-</p>
-<p>
-    Oggetto:{{email.ogg}}
-</p>
-<p *ngFor="show">
+<p [ngClass] = "cssColor">
+    Oggetto : {{email.ogg}}
+   </p>
+
+<p *ngIf="show">
     {{email.txt}}
 </p>
 
-<button *ngFor="!show" (click)="ShowHide()"> Mostra </button>
-<button *ngFor="show" (click)="ShowHide()"> Nascondi </button>
+<button *ngIf="!show" (click)="ShowHide()"> Mostra </button>
+<button *ngIf="show" (click)="ShowHide()"> Nascondi </button>
+<button (click) = "specializza()">speciale</button>
 
 <hr>

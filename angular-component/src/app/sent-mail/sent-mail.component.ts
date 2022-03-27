@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { Email } from 'src/app/models/email.models' ; 
+import { Email } from '../models/email.models'; 
 
 
 @Component({
@@ -7,9 +7,11 @@ import { Email } from 'src/app/models/email.models' ;
   templateUrl: './sent-mail.component.html',
   styleUrls: ['./sent-mail.component.css']
 })
+
 export class SentMailComponent implements OnInit {
-  @Input() email : Email = null!; 
+  @Input()email : Email = null!;
   show = false; 
+  @HostBinding("class") cssColor = "white"
   constructor() { }
 
   ngOnInit(): void {
@@ -17,5 +19,12 @@ export class SentMailComponent implements OnInit {
 
   ShowHide(){
     this.show = !this.show; 
+  }
+
+  specializza(){
+    if(this.cssColor == "white")this.cssColor = "yellow"
+    else this.cssColor = "white"
+  
+  
   }
 }

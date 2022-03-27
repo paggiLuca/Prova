@@ -8,12 +8,14 @@ import { Email } from './models/email.models';
 })
 export class AppComponent {
   title = 'angular-component';
-
   vettEmail : Email[] = [];
 
-  sendEmail(a:HTMLInputElement, ogg:HTMLInputElement,txt:HTMLInputElement){
-    
+  sendEmail(a : HTMLInputElement, ogg : HTMLInputElement, txt : HTMLInputElement){
+
+    console.log(a.value + " "+ ogg.value + " " + txt.value + " ")
+
     let e : Email = new Email(a.value, ogg.value, txt.value);
 
+    this.vettEmail.push(e)
   }
 }
